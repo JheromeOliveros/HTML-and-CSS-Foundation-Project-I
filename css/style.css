@@ -1,0 +1,292 @@
+/* Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: none;
+  padding: 5px;
+  background: rgba(65, 65, 65, 0.7);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2.1rem;
+  text-decoration: none;
+  margin-left: 115px;
+}
+
+.navbar .menu-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  margin-right: 115px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+  text-align: center;
+  float: left;
+}
+
+.navbar a:hover {
+  color: black;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  position: inherit;
+}
+
+.dropdown .dropbtn {
+  font-size: inherit;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: inherit;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown .dropbtn i {
+  margin-left: 5px;
+}
+
+.dropdown:hover .dropbtn,
+.dropdown .dropbtn:active {
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(249, 249, 249, 0.9);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  font-weight: 100;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(69, 145, 69, 0.7);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hero-section {
+  height: 100vh;
+  background-image: url("../image/hero-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+}
+
+.hero-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.hero-section .content button {
+  background: #fff;
+  padding: 12px 30px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 38px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.hero-section .content button:hover {
+  color: #fff;
+  background: rgba(69, 145, 69);
+}
+
+.footer {
+  padding: 1rem;
+  font-size: 1rem;
+  color: white;
+  background: rgba(36, 36, 36, 0.9);
+  text-align: center;
+  text-transform: none;
+}
+
+.footer span a {
+  color: rgba(69, 145, 69);
+  text-decoration: none;
+}
+
+.footer span a:hover {
+  color: black;
+}
+
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 999;
+  }
+
+  .navbar .logo {
+    font-size: 1.7rem;
+    margin-left: 16%;
+  }
+
+  #hamburger-btn, #close-menu-btn {
+    display: block;
+    cursor: pointer;
+    margin-right: 5%;
+  }
+
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 60px 35px 0;
+    transition: right 0.2s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    right: -115px;
+  }
+
+  .navbar a {
+    color: #005a66;
+    display: block;
+  }
+
+  .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #005a66;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .dropdown.show .dropbtn {
+    color: black;
+  }
+
+  .navbar .menu-links .dropdown {
+    position: relative;
+  }
+
+  .navbar .menu-links .dropdown-content {
+    display: none;
+    position: static;
+    color: #005a66;
+    width: 100%;
+    background-color: #f9f9f9;
+    z-index: 1000;
+  }
+
+  .navbar .menu-links .dropdown.show .dropdown-content {
+    display: block;
+  }
+
+  .hero-section .content {
+    text-align: center;
+  }
+
+  .hero-section .content :is(h2, p) {
+    max-width: 100%;
+  }
+
+  .hero-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+}
